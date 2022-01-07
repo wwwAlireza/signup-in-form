@@ -29,7 +29,7 @@ body {
   width: 100vw;
   min-height: 100vh;
   background-repeat: repeat;
-  overflow: hidden;
+  overflow-x: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
