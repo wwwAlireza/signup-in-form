@@ -1,0 +1,489 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+:root {
+  color-scheme: "dark";
+  --body-rotate: rotateY(0deg);
+  --background-position: 0 0;
+  --body-height: 380px;
+  --login-display: flex;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.d-none {
+  display: none !important;
+}
+
+body {
+  background-image: url("../../svg/Sprinkle.svg");
+  width: 100vw;
+  min-height: 100vh;
+  background-repeat: repeat;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: background-position 1s;
+  transition: background-position 1s;
+  background-position: var(--background-position);
+}
+
+body * {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 380px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+@media screen and (max-width: 385px) {
+  .container {
+    width: 95%;
+    margin-bottom: 50%;
+  }
+}
+
+.container .header {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
+}
+
+.container .body {
+  width: 100%;
+  height: var(--body-height);
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: height .5s, -webkit-transform .8s;
+  transition: height .5s, -webkit-transform .8s;
+  transition: transform .8s, height .5s;
+  transition: transform .8s, height .5s, -webkit-transform .8s;
+  -webkit-transform: var(--body-rotate);
+          transform: var(--body-rotate);
+  -webkit-box-shadow: 0px 0px 4px 5px #163352;
+          box-shadow: 0px 0px 4px 5px #163352;
+  border-radius: 5px;
+}
+
+.header .header-titles {
+  font-size: 1.8rem;
+  color: #fff;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: bold;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-shadow: 0px 0px 3px #fff;
+}
+
+.header .header-titles span:nth-child(1) {
+  margin-right: 25px;
+}
+
+.header #header-toggler-checkbox {
+  display: none;
+}
+
+.header #header-toggler-checkbox:checked ~ label[for=header-toggler-checkbox] .header-toggler-circle {
+  left: 90%;
+  -webkit-transform: translate(-50%, -50%) rotate(90deg);
+          transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.header .header-toggler {
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 1px 1px #0d6efd;
+          box-shadow: 0px 0px 1px 1px #0d6efd;
+  margin-top: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.header .header-toggler .header-toggler-circle {
+  width: 25px;
+  height: 25px;
+  background-color: #0d6efd;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: left .4s, -webkit-transform .4s .1s;
+  transition: left .4s, -webkit-transform .4s .1s;
+  transition: left .4s, transform .4s .1s;
+  transition: left .4s, transform .4s .1s, -webkit-transform .4s .1s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .header-toggler .header-toggler-circle .toggler-arrow-icon {
+  width: 18px;
+  stroke: #fff;
+  stroke-width: 2px;
+}
+
+.body .form-wave {
+  position: absolute;
+  bottom: 0;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  height: 120px;
+  width: 200%;
+}
+
+.body .login-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #26425f;
+}
+
+.body .login-container .login-content, .body .login-container .signup-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+}
+
+.body .signup-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #26425f;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.body .signup-container .signup-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+}
+
+.login-content, .signup-content {
+  display: var(--login-display);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-content .login-header, .signup-content .login-header, .signup-content .signup-header {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.login-content .login-header .login-header-icon, .signup-content .login-header .login-header-icon, .signup-content .signup-header .login-header-icon, .signup-content .signup-header .signup-header-icon {
+  display: inline-block;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.login-content .login-header .login-header-icon svg, .signup-content .login-header .login-header-icon svg, .signup-content .signup-header .login-header-icon svg, .signup-content .signup-header .signup-header-icon svg {
+  width: 32px;
+}
+
+.login-content .login-input-container, .signup-content .login-input-container, .signup-content .signup-input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 75%;
+}
+
+@media screen and (max-width: 450px) {
+  .login-content .login-input-container, .signup-content .login-input-container, .signup-content .signup-input-container {
+    width: 85%;
+  }
+}
+
+.login-content .forget-password, .signup-content .forget-password {
+  width: 92%;
+  text-align: left;
+  padding: 4px;
+  font-size: 1.15rem;
+  color: #617ac7;
+  cursor: pointer;
+}
+
+.login-input, .signup-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 100px;
+  width: 100%;
+  height: 45px;
+  margin-top: 15px;
+  -webkit-transition: -webkit-box-shadow .3s;
+  transition: -webkit-box-shadow .3s;
+  transition: box-shadow .3s;
+  transition: box-shadow .3s, -webkit-box-shadow .3s;
+}
+
+.login-input .login-input-icon, .signup-input .login-input-icon, .signup-input .signup-input-icon {
+  width: auto;
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  width: 27px;
+  height: 27px;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: -webkit-transform .1s;
+  transition: -webkit-transform .1s;
+  transition: transform .1s;
+  transition: transform .1s, -webkit-transform .1s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  top: .1px;
+}
+
+.login-input .login-input-icon svg, .signup-input .login-input-icon svg, .signup-input .signup-input-icon svg {
+  width: 17px;
+  stroke-width: 2px;
+  stroke: rgba(255, 255, 255, 0.7);
+}
+
+.login-input .login-input-input, .signup-input .login-input-input, .signup-input .signup-input-input {
+  background-color: transparent;
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.9);
+  padding-left: 10px;
+  outline: none;
+  border: none;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.login-input .login-input-input::-webkit-input-placeholder, .signup-input .login-input-input::-webkit-input-placeholder, .signup-input .signup-input-input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  -webkit-transition: color .1s;
+  transition: color .1s;
+}
+
+.login-input .login-input-input:-ms-input-placeholder, .signup-input .login-input-input:-ms-input-placeholder, .signup-input .signup-input-input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  -webkit-transition: color .1s;
+  transition: color .1s;
+}
+
+.login-input .login-input-input::-ms-input-placeholder, .signup-input .login-input-input::-ms-input-placeholder, .signup-input .signup-input-input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  -webkit-transition: color .1s;
+  transition: color .1s;
+}
+
+.login-input .login-input-input::placeholder, .signup-input .login-input-input::placeholder, .signup-input .signup-input-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  -webkit-transition: color .1s;
+  transition: color .1s;
+}
+
+.login-input .login-input-input:focus::-webkit-input-placeholder, .signup-input .login-input-input:focus::-webkit-input-placeholder, .signup-input .signup-input-input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.login-input .login-input-input:focus:-ms-input-placeholder, .signup-input .login-input-input:focus:-ms-input-placeholder, .signup-input .signup-input-input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.login-input .login-input-input:focus::-ms-input-placeholder, .signup-input .login-input-input:focus::-ms-input-placeholder, .signup-input .signup-input-input:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+.login-input .login-input-input:focus::placeholder, .signup-input .login-input-input:focus::placeholder, .signup-input .signup-input-input:focus::placeholder {
+  color: transparent;
+}
+
+.login-button-container, .signup-button-container {
+  margin-top: 15px;
+}
+
+.login-button-container .login-button, .signup-button-container .login-button, .signup-button-container .signup-button {
+  width: 120px;
+  height: 40px;
+  background-color: #0E2A47;
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 20px 1px #0E2A47;
+          box-shadow: 0px 0px 20px 1px #0E2A47;
+  -webkit-transition: -webkit-box-shadow .3s;
+  transition: -webkit-box-shadow .3s;
+  transition: box-shadow .3s;
+  transition: box-shadow .3s, -webkit-box-shadow .3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-button-container .login-button .login-button-title, .signup-button-container .login-button .login-button-title, .signup-button-container .signup-button .login-button-title, .signup-button-container .signup-button .signup-button-title {
+  position: relative;
+  left: 10px;
+  -webkit-transition: left .2s;
+  transition: left .2s;
+}
+
+.login-button-container .login-button .login-button-icon, .signup-button-container .login-button .login-button-icon, .signup-button-container .signup-button .login-button-icon, .signup-button-container .signup-button .signup-button-icon {
+  width: 17px;
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 2px;
+  margin-left: 4px;
+  margin-top: 6px;
+  opacity: 0;
+  -webkit-transition: opacity .7s;
+  transition: opacity .7s;
+}
+
+.login-button-container .login-button:hover, .signup-button-container .login-button:hover, .signup-button-container .signup-button:hover, .login-button-container .login-button:focus, .signup-button-container .login-button:focus, .signup-button-container .signup-button:focus {
+  -webkit-box-shadow: 0px 0px 25px 5px #0E2A47;
+          box-shadow: 0px 0px 25px 5px #0E2A47;
+}
+
+.login-button-container .login-button:hover .login-button-icon, .signup-button-container .login-button:hover .login-button-icon, .signup-button-container .signup-button:hover .login-button-icon, .login-button-container .login-button:hover .signup-button-container .signup-button .signup-button-icon, .signup-button-container .login-button:hover .signup-button .signup-button-icon, .signup-button-container .signup-button .login-button:hover .signup-button-icon, .signup-button-container .signup-button:hover .signup-button-icon, .login-button-container .login-button:focus .login-button-icon, .signup-button-container .login-button:focus .login-button-icon, .signup-button-container .signup-button:focus .login-button-icon, .login-button-container .login-button:focus .signup-button-container .signup-button .signup-button-icon, .signup-button-container .login-button:focus .signup-button .signup-button-icon, .signup-button-container .signup-button .login-button:focus .signup-button-icon, .signup-button-container .signup-button:focus .signup-button-icon {
+  opacity: 1;
+}
+
+.login-button-container .login-button:hover .login-button-title, .signup-button-container .login-button:hover .login-button-title, .signup-button-container .signup-button:hover .login-button-title, .login-button-container .login-button:hover .signup-button-container .signup-button .signup-button-title, .signup-button-container .login-button:hover .signup-button .signup-button-title, .signup-button-container .signup-button .login-button:hover .signup-button-title, .signup-button-container .signup-button:hover .signup-button-title, .login-button-container .login-button:focus .login-button-title, .signup-button-container .login-button:focus .login-button-title, .signup-button-container .signup-button:focus .login-button-title, .login-button-container .login-button:focus .signup-button-container .signup-button .signup-button-title, .signup-button-container .login-button:focus .signup-button .signup-button-title, .signup-button-container .signup-button .login-button:focus .signup-button-title, .signup-button-container .signup-button:focus .signup-button-title {
+  left: 0;
+}
+
+.signup-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.signup-content .signup-header .signup-header-icon svg {
+  width: 32px;
+}
+
+.signup-button-container {
+  margin-top: 20px;
+}
+
+.login-input-icon.focused-icon, .signup-input .focused-icon.signup-input-icon {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.signup-input-icon.focused-icon {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.input-focused {
+  -webkit-box-shadow: 0px 0px 3px 2px rgba(255, 255, 255, 0.15);
+          box-shadow: 0px 0px 3px 2px rgba(255, 255, 255, 0.15);
+}
+/*# sourceMappingURL=style.css.map */

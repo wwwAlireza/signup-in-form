@@ -1,0 +1,366 @@
+// general
+ :root {
+    color-scheme: "dark";
+    --body-rotate: rotateY(0deg);
+    --background-position: 0 0;
+    --body-height: 380px;
+    --login-display: flex;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    user-select: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.d-none {
+    display: none !important;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+$font-poppins: 'Poppins',
+sans-serif;
+@mixin centerItems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// styles
+body {
+    background-image: url("../../svg/Sprinkle.svg");
+    width: 100vw;
+    min-height: 100vh;
+    background-repeat: repeat;
+    overflow: hidden;
+    @include centerItems();
+    * {
+        font-family: $font-poppins;
+    }
+    transition: background-position 1s;
+    background-position: var(--background-position);
+}
+
+.container {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    perspective: 1000px;
+    @media screen and (max-width: 385px) {
+        width: 95%;
+        margin-bottom: 50%;
+    }
+    .header {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    .body {
+        width: 100%;
+        height: var(--body-height);
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform .8s, height .5s;
+        transform: var(--body-rotate);
+        box-shadow: 0px 0px 4px 5px #163352;
+        border-radius: 5px;
+    }
+}
+
+// header styles
+.header {
+    .header-titles {
+        font-size: 1.8rem;
+        color: #fff;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+        user-select: none;
+        text-shadow: 0px 0px 3px #fff;
+        span {
+            &:nth-child(1) {
+                margin-right: 25px;
+            }
+        }
+    }
+    #header-toggler-checkbox {
+        display: none;
+        &:checked~label[for=header-toggler-checkbox] {
+            .header-toggler-circle {
+                left: 90%;
+                transform: translate(-50%, -50%) rotate(90deg);
+            }
+        }
+    }
+    .header-toggler {
+        width: 40px;
+        height: 20px;
+        border-radius: 10px;
+        background-color: transparent;
+        box-shadow: 0px 0px 1px 1px #0d6efd;
+        margin-top: 10px;
+        position: relative;
+        cursor: pointer;
+        .header-toggler-circle {
+            width: 25px;
+            height: 25px;
+            background-color: #0d6efd;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+            transition: left .4s, transform .4s .1s;
+            @include centerItems();
+            .toggler-arrow-icon {
+                width: 18px;
+                stroke: #fff;
+                stroke-width: 2px;
+            }
+        }
+    }
+}
+
+// body styles
+@mixin loginAndSignupStyles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #26425f;
+}
+
+@mixin loginAndSignupContentStyles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+}
+
+.body {
+    .form-wave {
+        position: absolute;
+        bottom: 0;
+        transform: rotate(180deg);
+        height: 120px;
+        width: 200%;
+    }
+    .login-container {
+        @include loginAndSignupStyles();
+        .login-content {
+            @include loginAndSignupContentStyles();
+        }
+    }
+    .signup-container {
+        .signup-content {
+            @include loginAndSignupContentStyles();
+        }
+        @include loginAndSignupStyles();
+        transform: rotateY(180deg);
+    }
+}
+
+// log in
+.login-content {
+    display: var(--login-display);
+    flex-direction: column;
+    align-items: center;
+    .login-header {
+        text-align: center;
+        margin-top: 10px;
+        .login-header-icon {
+            display: inline-block;
+            border: 2px solid rgba($color: #fff, $alpha: .5);
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            padding: 10px;
+            svg {
+                width: 32px;
+            }
+        }
+    }
+    .login-input-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 75%;
+        @media screen and (max-width: 450px) {
+            width: 85%;
+        }
+    }
+    .forget-password {
+        width: 92%;
+        text-align: left;
+        padding: 4px;
+        font-size: 1.15rem;
+        color: rgb(97, 122, 199);
+        cursor: pointer;
+    }
+}
+
+.login-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 2px solid rgba($color: #fff, $alpha: .1);
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 100px;
+    width: 100%;
+    height: 45px;
+    margin-top: 15px;
+    transition: box-shadow .3s;
+    .login-input-icon {
+        width: auto;
+        height: auto;
+        border: 1px solid rgba($color: #fff, $alpha: .4);
+        border-radius: 50%;
+        // flex-grow: 1;
+        width: 27px;
+        height: 27px;
+        transform: scale(1.2);
+        transition: transform .1s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        position: relative;
+        top: .1px;
+        svg {
+            width: 17px;
+            stroke-width: 2px;
+            stroke: rgba(255, 255, 255, 0.7);
+        }
+    }
+    .login-input-input {
+        background-color: transparent;
+        font-size: 1.6rem;
+        color: rgba($color: #fff, $alpha: .9);
+        padding-left: 10px;
+        outline: none;
+        border: none;
+        flex-grow: 1;
+        &::placeholder {
+            color: rgba($color: #fff, $alpha: .4);
+            transition: color .1s;
+        }
+        &:focus {
+            &::placeholder {
+                color: transparent;
+            }
+        }
+    }
+}
+
+.login-button-container {
+    margin-top: 15px;
+    .login-button {
+        width: 120px;
+        height: 40px;
+        background-color: #0E2A47;
+        border: none;
+        outline: none;
+        color: rgba($color: #fff, $alpha: .9);
+        border-radius: 5px;
+        font-size: 1.4rem;
+        cursor: pointer;
+        box-shadow: 0px 0px 20px 1px #0E2A47;
+        transition: box-shadow .3s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .login-button-title {
+            position: relative;
+            left: 10px;
+            transition: left .2s;
+        }
+        .login-button-icon {
+            width: 17px;
+            stroke: rgba($color: #fff, $alpha: .9);
+            stroke-width: 2px;
+            margin-left: 4px;
+            margin-top: 6px;
+            opacity: 0;
+            transition: opacity .7s;
+        }
+        &:hover,
+        &:focus {
+            box-shadow: 0px 0px 25px 5px #0E2A47;
+            .login-button-icon {
+                opacity: 1;
+            }
+            .login-button-title {
+                left: 0;
+            }
+        }
+    }
+}
+
+// signup
+.signup-content {
+    @extend .login-content;
+    display: flex;
+    .signup-input-container {
+        @extend .login-input-container;
+    }
+    .signup-header {
+        @extend .login-header;
+        .signup-header-icon {
+            @extend .login-header-icon;
+            svg {
+                width: 32px;
+            }
+        }
+    }
+}
+
+.signup-input {
+    @extend .login-input;
+    .signup-input-icon {
+        @extend .login-input-icon;
+    }
+    .signup-input-input {
+        @extend .login-input-input;
+    }
+}
+
+.signup-button-container {
+    @extend .login-button-container;
+    margin-top: 20px;
+    .signup-button {
+        @extend .login-button;
+        .signup-button-title {
+            @extend .login-button-title;
+        }
+        .signup-button-icon {
+            @extend .login-button-icon;
+        }
+    }
+}
+
+// after classes
+.login-input-icon.focused-icon {
+    transform: scale(1.4);
+    border-color: rgba($color: #fff, $alpha: .1);
+}
+
+.signup-input-icon.focused-icon {
+    transform: scale(1.4);
+    border-color: rgba($color: #fff, $alpha: .1);
+}
+
+.input-focused {
+    box-shadow: 0px 0px 3px 2px rgba($color: #fff, $alpha: .15);
+}
