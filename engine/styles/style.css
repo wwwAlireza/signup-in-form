@@ -25,11 +25,11 @@ html {
 }
 
 body {
-  background-image: url("../../svg/Sprinkle.svg");
+  background-image: url("../../content/images/Sprinkle.svg");
   width: 100vw;
   min-height: 100vh;
   background-repeat: repeat;
-  overflow-x: hidden;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -67,7 +67,6 @@ body * {
 @media screen and (max-width: 385px) {
   .container {
     width: 95%;
-    margin-bottom: 50%;
   }
 }
 
@@ -287,9 +286,9 @@ body * {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -343,15 +342,13 @@ body * {
 }
 
 .login-input .login-input-input, .signup-input .login-input-input, .signup-input .signup-input-input {
+  width: 80%;
   background-color: transparent;
   font-size: 1.6rem;
   color: rgba(255, 255, 255, 0.9);
   padding-left: 10px;
   outline: none;
   border: none;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
 }
 
 .login-input .login-input-input::-webkit-input-placeholder, .signup-input .login-input-input::-webkit-input-placeholder, .signup-input .signup-input-input::-webkit-input-placeholder {
