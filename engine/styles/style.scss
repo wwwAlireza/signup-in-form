@@ -53,7 +53,6 @@ body {
     perspective: 1000px;
     @media screen and (max-width: 385px) {
         width: 95%;
-        margin-bottom: 50%;
     }
     .header {
         width: 100%;
@@ -211,7 +210,7 @@ body {
 
 .login-input {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background-color: transparent;
     border: 2px solid rgba($color: #fff, $alpha: .1);
@@ -243,13 +242,13 @@ body {
         }
     }
     .login-input-input {
+        width: 80%;
         background-color: transparent;
         font-size: 1.6rem;
         color: rgba($color: #fff, $alpha: .9);
         padding-left: 10px;
         outline: none;
         border: none;
-        flex-grow: 1;
         &::placeholder {
             color: rgba($color: #fff, $alpha: .4);
             transition: color .1s;
