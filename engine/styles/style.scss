@@ -227,7 +227,6 @@ body {
         height: auto;
         border: 1px solid rgba($color: #fff, $alpha: .4);
         border-radius: 50%;
-        // flex-grow: 1;
         width: 27px;
         height: 27px;
         transform: scale(1.2);
@@ -237,7 +236,6 @@ body {
         align-items: center;
         box-sizing: border-box;
         position: relative;
-        top: .1px;
         svg {
             width: 17px;
             stroke-width: 2px;
